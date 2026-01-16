@@ -1,7 +1,7 @@
-package exercicioelevador.ui;
+package com.philipecarvalho.exercicioelevador.ui;
 
-import exercicioelevador.domain.Elevador;
-import exercicioelevador.service.ElevadorService;
+import com.philipecarvalho.exercicioelevador.domain.Elevador;
+import com.philipecarvalho.exercicioelevador.service.ElevadorService;
 import javax.swing.JOptionPane;
 
 public class Ui {

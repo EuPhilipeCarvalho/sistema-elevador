@@ -1,4 +1,4 @@
-package exercicioelevador.exception;
+package com.philipecarvalho.exercicioelevador.exception;
 
 public class UltimoAndarException extends RuntimeException {
     public UltimoAndarException() {

@@ -1,4 +1,4 @@
-package exercicioelevador.exception;
+package com.philipecarvalho.exercicioelevador.exception;
 
 public class ElevadorCheioException extends RuntimeException {
     public ElevadorCheioException() {

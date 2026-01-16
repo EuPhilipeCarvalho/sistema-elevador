@@ -1,5 +1,5 @@
-package exercicioelevador.service;
-import exercicioelevador.domain.Elevador;
+package com.philipecarvalho.exercicioelevador.service;
+import com.philipecarvalho.exercicioelevador.domain.Elevador;
 
 public class ElevadorService {
     //Classe de delegar chamadas

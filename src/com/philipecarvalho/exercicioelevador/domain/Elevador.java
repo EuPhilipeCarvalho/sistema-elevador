@@ -1,5 +1,5 @@
-package exercicioelevador.domain;
-import exercicioelevador.exception.*;
+package com.philipecarvalho.exercicioelevador.domain;
+import com.philipecarvalho.exercicioelevador.exception.*;
 
 public class Elevador {
     //Atributos
