@@ -2,13 +2,5 @@
 .idea/
 *.iml
 
-# Compilação
+# Build
 out/
-target/
-
-# Logs
-*.log
-
-# SO
-.DS_Store
-Thumbs.db
