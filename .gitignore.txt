@@ -2,9 +2,13 @@
 .idea/
 *.iml
 
-# Compilados
+# Compilação
 out/
 target/
 
-# Sistema
+# Logs
+*.log
+
+# SO
 .DS_Store
+Thumbs.db
