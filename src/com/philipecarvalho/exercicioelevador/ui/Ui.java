@@ -31,25 +31,35 @@ public class Ui {
                         para retornar.)""", "Capacidade", JOptionPane.QUESTION_MESSAGE);
                 if (capacidade==null || capacidade.isEmpty()) break;
 
+                int capacidadeTotal;
+                try {
+                    capacidadeTotal = Integer.parseInt(capacidade);
+                    if (capacidadeTotal <= 0) {
+                        throw new NumberFormatException("Capacidade deve ser maior que zero!");
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage(), "Ops!", JOptionPane.WARNING_MESSAGE);
+                    continue;
+                }
+
                 String totalAndares = JOptionPane.showInputDialog(null, """
                         Insira o total de andares no prédio:
                         (Clique em "cancelar: ou deixe vazio
                         para retornar.)""", "Total de Andares", JOptionPane.QUESTION_MESSAGE);
                 if (totalAndares==null || totalAndares.isEmpty()) break;
 
-                int capacidadeTotal;
                 int andaresTotal;
                 try {
-                    capacidadeTotal = Integer.parseInt(capacidade);
-                    if (capacidadeTotal <= 0) throw new NumberFormatException("Valor da capacidade deve ser maior que zero!");
-
                     andaresTotal = Integer.parseInt(totalAndares);
-                    if (andaresTotal <= 0) throw new NumberFormatException("Valor do total de andares deve ser maior que zero!");
-
+                    if (andaresTotal <= 0) {
+                        throw new NumberFormatException("O total de andares deve ser maior que zero!");
+                    }
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Ops!", JOptionPane.WARNING_MESSAGE);
                     continue;
                 }
+
+
 
                 //Tudo certo
                 Elevador elevador = new Elevador(capacidadeTotal, andaresTotal);
