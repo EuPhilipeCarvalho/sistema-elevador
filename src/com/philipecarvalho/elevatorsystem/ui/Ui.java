@@ -1,7 +1,7 @@
-package com.philipecarvalho.exercicioelevador.ui;
+package com.philipecarvalho.elevatorsystem.ui;
 
-import com.philipecarvalho.exercicioelevador.domain.Elevator;
-import com.philipecarvalho.exercicioelevador.service.ElevatorService;
+import com.philipecarvalho.elevatorsystem.domain.Elevator;
+import com.philipecarvalho.elevatorsystem.service.ElevatorService;
 import javax.swing.JOptionPane;
 
 /** Essa classe serve para entrada de dados;

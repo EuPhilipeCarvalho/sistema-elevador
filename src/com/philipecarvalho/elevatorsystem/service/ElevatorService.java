@@ -1,6 +1,6 @@
-package com.philipecarvalho.exercicioelevador.service;
+package com.philipecarvalho.elevatorsystem.service;
 
-import com.philipecarvalho.exercicioelevador.domain.Elevator;
+import com.philipecarvalho.elevatorsystem.domain.Elevator;
 
 /**
  * Classe realizada para chamar serviços corretos

@@ -1,4 +1,4 @@
-package com.philipecarvalho.exercicioelevador.exception;
+package com.philipecarvalho.elevatorsystem.exception;
 
 public class GroundFloorException extends RuntimeException {
     public GroundFloorException() {

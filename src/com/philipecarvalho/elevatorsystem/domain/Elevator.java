@@ -1,9 +1,9 @@
-package com.philipecarvalho.exercicioelevador.domain;
+package com.philipecarvalho.elevatorsystem.domain;
 
-import com.philipecarvalho.exercicioelevador.exception.ElevadorEmptyException;
-import com.philipecarvalho.exercicioelevador.exception.ElevatorFullException;
-import com.philipecarvalho.exercicioelevador.exception.GroundFloorException;
-import com.philipecarvalho.exercicioelevador.exception.LastFloorException;
+import com.philipecarvalho.elevatorsystem.exception.ElevadorEmptyException;
+import com.philipecarvalho.elevatorsystem.exception.ElevatorFullException;
+import com.philipecarvalho.elevatorsystem.exception.GroundFloorException;
+import com.philipecarvalho.elevatorsystem.exception.LastFloorException;
 
 public class Elevator {
     /**
