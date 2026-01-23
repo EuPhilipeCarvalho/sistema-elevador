@@ -1,10 +1,10 @@
 package com.philipecarvalho.exercicioelevador.exception;
 
-public class UltimoAndarException extends RuntimeException {
-    public UltimoAndarException() {
+public class LastFloorException extends RuntimeException {
+    public LastFloorException() {
         super("Último andar já atingido! Não é possível subir mais.");
     }
-    public UltimoAndarException(String message) {
+    public LastFloorException(String message) {
         super(message);
     }
 }

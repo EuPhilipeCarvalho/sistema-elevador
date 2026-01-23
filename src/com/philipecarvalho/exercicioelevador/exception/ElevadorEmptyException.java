@@ -1,10 +1,10 @@
 package com.philipecarvalho.exercicioelevador.exception;
 
-public class ElevadorVazioException extends RuntimeException {
-    public ElevadorVazioException() {
+public class ElevadorEmptyException extends RuntimeException {
+    public ElevadorEmptyException() {
         super("Elevador vazio! Não há ninguém para sair.");
     }
-    public ElevadorVazioException(String message) {
+    public ElevadorEmptyException(String message) {
         super(message);
     }
 }

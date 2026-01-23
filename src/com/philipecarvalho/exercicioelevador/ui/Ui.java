@@ -1,23 +1,27 @@
 package com.philipecarvalho.exercicioelevador.ui;
 
-import com.philipecarvalho.exercicioelevador.domain.Elevador;
-import com.philipecarvalho.exercicioelevador.service.ElevadorService;
+import com.philipecarvalho.exercicioelevador.domain.Elevator;
+import com.philipecarvalho.exercicioelevador.service.ElevatorService;
 import javax.swing.JOptionPane;
 
+/** Essa classe serve para entrada de dados;
+ * Experiencia do usuario;
+ * E interfaces.
+ */
 public class Ui {
     public static void main(String[] args) {
-        while(true){
-            String recepcao = JOptionPane.showInputDialog(null, """
+        while (true) {
+            String reception = JOptionPane.showInputDialog(null, """
                     Bem-vindo ao elevador Phil's High!
                     Escolha:
                     
                     1. Entrar
                     0. Sair""", "Ola!", JOptionPane.QUESTION_MESSAGE);
-            if (recepcao==null || recepcao.equals("0")) {
+            if (reception==null || reception.equals("0")) {
                 JOptionPane.showMessageDialog(null, "Finalizando o sistema!", "Tchau!", JOptionPane.WARNING_MESSAGE);
                 break;
             }
-            if (!recepcao.equals("1")) {
+            if (!reception.equals("1")) {
                 JOptionPane.showMessageDialog(null, "Escolha uma das alternativas!", "Ops!", JOptionPane.WARNING_MESSAGE);
                 continue;
             }
@@ -25,16 +29,16 @@ public class Ui {
             //Entrou
             while(true){
                 //Inserir a capacidade maxima do elevador
-                String capacidade = JOptionPane.showInputDialog(null, """
+                String capacity = JOptionPane.showInputDialog(null, """
                         Insira o total de passageiros permitidos:
                         (Clique em "cancelar: ou deixe vazio
                         para retornar.)""", "Capacidade", JOptionPane.QUESTION_MESSAGE);
-                if (capacidade==null || capacidade.isEmpty()) break;
+                if (capacity==null || capacity.isEmpty()) break;
 
-                int capacidadeTotal;
+                int totalCapacity;
                 try {
-                    capacidadeTotal = Integer.parseInt(capacidade);
-                    if (capacidadeTotal <= 0) {
+                    totalCapacity = Integer.parseInt(capacity);
+                    if (totalCapacity <= 0) {
                         throw new NumberFormatException("Capacidade deve ser maior que zero!");
                     }
                 } catch (NumberFormatException e) {
@@ -42,16 +46,16 @@ public class Ui {
                     continue;
                 }
 
-                String totalAndares = JOptionPane.showInputDialog(null, """
+                String maxFloors = JOptionPane.showInputDialog(null, """
                         Insira o total de andares no prédio:
                         (Clique em "cancelar: ou deixe vazio
                         para retornar.)""", "Total de Andares", JOptionPane.QUESTION_MESSAGE);
-                if (totalAndares==null || totalAndares.isEmpty()) break;
+                if (maxFloors==null || maxFloors.isEmpty()) break;
 
-                int andaresTotal;
+                int totalFloors;
                 try {
-                    andaresTotal = Integer.parseInt(totalAndares);
-                    if (andaresTotal <= 0) {
+                    totalFloors = Integer.parseInt(maxFloors);
+                    if (totalFloors <= 0) {
                         throw new NumberFormatException("O total de andares deve ser maior que zero!");
                     }
                 } catch (NumberFormatException e) {
@@ -62,8 +66,8 @@ public class Ui {
 
 
                 //Tudo certo
-                Elevador elevador = new Elevador(capacidadeTotal, andaresTotal);
-                ElevadorService service = new ElevadorService(elevador);
+                Elevator elevator = new Elevator(totalCapacity, totalFloors);
+                ElevatorService service = new ElevatorService(elevator);
 
                 while(true){
                     String menu = JOptionPane.showInputDialog(null, """
@@ -83,10 +87,10 @@ public class Ui {
                     switch (menu) {
                         case "1" -> {
                             try {
-                                service.subir();
+                                service.up();
                                 JOptionPane.showMessageDialog(null, String.format("""
                                     Elevador subindo!
-                                    Andar atual: %d""", service.andarAtual()), "Subindo", JOptionPane.INFORMATION_MESSAGE);
+                                    Andar atual: %d""", service.floors()), "Subindo", JOptionPane.INFORMATION_MESSAGE);
                             } catch (RuntimeException e) {
                                 JOptionPane.showMessageDialog(null, e.getMessage(), "Erro!", JOptionPane.ERROR_MESSAGE);
                             }
@@ -94,10 +98,10 @@ public class Ui {
 
                         case "2" -> {
                             try {
-                                service.descer();
+                                service.down();
                                 JOptionPane.showMessageDialog(null, String.format("""
                                     Elevador descendo!
-                                    Andar atual: %d""", service.andarAtual()), "Descendo", JOptionPane.INFORMATION_MESSAGE);
+                                    Andar atual: %d""", service.floors()), "Descendo", JOptionPane.INFORMATION_MESSAGE);
                             } catch (RuntimeException e) {
                                 JOptionPane.showMessageDialog(null, e.getMessage(), "Erro!", JOptionPane.ERROR_MESSAGE);
                             }
@@ -105,11 +109,11 @@ public class Ui {
 
                         case "3" -> {
                             try {
-                                service.entrar();
+                                service.enter();
                                 JOptionPane.showMessageDialog(null, String.format("""
                                     Entrando um passageiro.
                                     Cuidado com o vao do elevador e o andar!
-                                    Total de passageiros: %d""", service.passageirosPresentes()), "Entrando", JOptionPane.INFORMATION_MESSAGE);
+                                    Total de passageiros: %d""", service.passengers()), "Entrando", JOptionPane.INFORMATION_MESSAGE);
                             } catch (RuntimeException e) {
                                 JOptionPane.showMessageDialog(null, e.getMessage(), "Erro!", JOptionPane.ERROR_MESSAGE);
                             }
@@ -117,11 +121,11 @@ public class Ui {
 
                         case "4" -> {
                             try {
-                                service.sair();
+                                service.leave();
                                 JOptionPane.showMessageDialog(null, String.format("""
                                     Saindo um passageiro.
                                     Cuidado com o vao do elevador e o andar!
-                                    Total de passageiros: %d""", service.passageirosPresentes()), "Saindo", JOptionPane.INFORMATION_MESSAGE);
+                                    Total de passageiros: %d""", service.passengers()), "Saindo", JOptionPane.INFORMATION_MESSAGE);
                             } catch (RuntimeException e) {
                                 JOptionPane.showMessageDialog(null, e.getMessage(), "Erro!", JOptionPane.ERROR_MESSAGE);
                             }

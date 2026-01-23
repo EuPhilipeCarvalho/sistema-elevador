@@ -1,10 +1,10 @@
 package com.philipecarvalho.exercicioelevador.exception;
 
-public class ElevadorCheioException extends RuntimeException {
-    public ElevadorCheioException() {
+public class ElevatorFullException extends RuntimeException {
+    public ElevatorFullException() {
         super("Elevador lotado! Não pode entrar mais pessoas.");
     }
-    public ElevadorCheioException(String message) {
+    public ElevatorFullException(String message) {
         super(message);
     }
 }
