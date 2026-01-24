@@ -23,7 +23,8 @@ public class ElevatorService {
         ELEVATOR.moveDownOneFloor();
     }
 
-    public void enter() {ELEVATOR.addPassenger();
+    public void enter() {
+        ELEVATOR.addPassenger();
     }
 
     public void leave() {
