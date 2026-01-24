@@ -23,11 +23,10 @@ public class ElevatorService {
         ELEVATOR.moveDownOneFloor();
     }
 
-    public void enter() {
-        ELEVATOR.aPassengerEnter();
+    public void enter() {ELEVATOR.addPassenger();
     }
 
     public void leave() {
-        ELEVATOR.aPassengerLeave();
+        ELEVATOR.removePassenger();
     }
 }

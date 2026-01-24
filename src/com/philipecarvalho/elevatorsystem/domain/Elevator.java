@@ -47,7 +47,7 @@ public class Elevator {
         }
     }
 
-    public void aPassengerEnter() {
+    public void addPassenger() {
         if (currentPassengers >= MAX_CAPACITY) {
             throw new ElevatorFullException();
         } else {
@@ -55,7 +55,7 @@ public class Elevator {
         }
     }
 
-    public void aPassengerLeave() {
+    public void removePassenger() {
         if (currentPassengers <= 0) {
             throw new ElevadorEmptyException();
         } else {
