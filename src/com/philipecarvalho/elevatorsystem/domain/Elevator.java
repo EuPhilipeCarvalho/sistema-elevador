@@ -9,30 +9,30 @@ public class Elevator {
     /**
      * Elevador inicia no terreo e vazio
      */
-    private final int MAX_CAPACITY;
+    private final int maxCapacity;
     private int currentPassengers= 0;
-    private final int TOTAL_FLOORS;
+    private final int totalFloors;
     private int currentFloor = 0;
 
     //Construtor
-    public Elevator(int MAX_CAPACITY, int TOTAL_FLOORS) {
-        if (MAX_CAPACITY <= 0) {
+    public Elevator(int maxCapacity, int totalFloors) {
+        if (maxCapacity <= 0) {
             throw new IllegalArgumentException("A capacidade informada deve ser maior que zero");
         }
 
-        if (TOTAL_FLOORS <= 0) {
+        if (totalFloors <= 0) {
             throw new IllegalArgumentException("O total de andares informado deve ser maior que zero");
         }
 
-        this.MAX_CAPACITY = MAX_CAPACITY;
-        this.TOTAL_FLOORS = TOTAL_FLOORS;
+        this.maxCapacity = maxCapacity;
+        this.totalFloors = totalFloors;
     }
 
     public int getCurrentFloor() { return this.currentFloor; }
     public int getCurrentPassengers() { return this.currentPassengers; }
 
     public void moveUpOneFloor() {
-        if (currentFloor >= TOTAL_FLOORS) {
+        if (currentFloor >= totalFloors) {
             throw new LastFloorException();
         } else {
             currentFloor++;
@@ -48,7 +48,7 @@ public class Elevator {
     }
 
     public void addPassenger() {
-        if (currentPassengers >= MAX_CAPACITY) {
+        if (currentPassengers >= maxCapacity) {
             throw new ElevatorFullException();
         } else {
             currentPassengers++;

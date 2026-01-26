@@ -6,28 +6,28 @@ import com.philipecarvalho.elevatorsystem.domain.Elevator;
  * Classe realizada para chamar serviços corretos
  */
 public class ElevatorService {
-    private final Elevator ELEVATOR;
+    private final Elevator elevator;
 
-    public  ElevatorService(Elevator ELEVATOR) {
-        this.ELEVATOR = ELEVATOR;
+    public  ElevatorService(Elevator elevator) {
+        this.elevator = elevator;
     }
 
-    public int passengers() {return ELEVATOR.getCurrentPassengers();}
-    public int floors() {return ELEVATOR.getCurrentFloor();}
+    public int passengers() {return elevator.getCurrentPassengers();}
+    public int floors() {return elevator.getCurrentFloor();}
 
     public void up() {
-        ELEVATOR.moveUpOneFloor();
+        elevator.moveUpOneFloor();
     }
 
     public void down() {
-        ELEVATOR.moveDownOneFloor();
+        elevator.moveDownOneFloor();
     }
 
     public void enter() {
-        ELEVATOR.addPassenger();
+        elevator.addPassenger();
     }
 
     public void leave() {
-        ELEVATOR.removePassenger();
+        elevator.removePassenger();
     }
 }
